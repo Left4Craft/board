@@ -35,7 +35,7 @@ public class Board {
     private final Player player;
     private final Objective objective;
     private final Team team;
-    @Setter private BoardSettings boardSettings;
+    private BoardSettings boardSettings;
     private boolean ready;
 
     public Board(@NonNull final Player player, final BoardSettings boardSettings) {
@@ -49,6 +49,10 @@ public class Board {
         this.team.setPrefix("");
         this.team.setSuffix("");
         this.ready = true;
+    }
+
+    public void setBoardSettings(BoardSettings boardSettings) {
+        this.boardSettings = boardSettings;
     }
 
     public Scoreboard getScoreboard() {

@@ -21,7 +21,7 @@ public class ExampleUsage extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        manager = new BoardManager(this, BoardSettings.builder().boardProvider(new ExampleProviderImplementation()).scoreDirection(ScoreDirection.UP).build());
+        manager = new BoardManager(this, new BoardSettings(new ExampleProviderImplementation(), ScoreDirection.UP));
     }
 
     @Override

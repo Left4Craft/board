@@ -6,7 +6,7 @@
 
     <groupId>me.missionary</groupId>
     <artifactId>board</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>left4craft-1.1</version>
     <packaging>jar</packaging>
 
     <name>Board</name>
@@ -21,11 +21,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+				<version>3.8.1</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
             </plugin>
         </plugins>
     </build>
