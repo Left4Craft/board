@@ -1,7 +1,6 @@
 package me.missionary.board.board;
 
 import lombok.NonNull;
-import lombok.Setter;
 import me.missionary.board.settings.BoardSettings;
 import me.missionary.board.settings.ScoreDirection;
 import org.bukkit.Bukkit;
@@ -45,7 +44,8 @@ public class Board {
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         this.team = this.getScoreboard().getTeam("board") == null ? this.getScoreboard().registerNewTeam("board") : this.getScoreboard().getTeam("board");
         this.team.setAllowFriendlyFire(true);
-        this.team.setCanSeeFriendlyInvisibles(false);
+        this.team.setCanSeeFriendlyInvisibles(true);
+        this.team.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
         this.team.setPrefix("");
         this.team.setSuffix("");
         this.ready = true;
