@@ -40,7 +40,7 @@ public class Board {
     public Board(@NonNull final Player player, final BoardSettings boardSettings) {
         this.player = player;
         this.boardSettings = boardSettings;
-        this.objective = this.getScoreboard().getObjective("board") == null ? this.getScoreboard().registerNewObjective("board", "dummy") : this.getScoreboard().getObjective("board");
+        this.objective = this.getScoreboard().getObjective("board") == null ? this.getScoreboard().registerNewObjective("board", "dummy", "dummy") : this.getScoreboard().getObjective("board");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         this.team = this.getScoreboard().getTeam("board") == null ? this.getScoreboard().registerNewTeam("board") : this.getScoreboard().getTeam("board");
         this.team.setAllowFriendlyFire(true);
@@ -48,6 +48,8 @@ public class Board {
         this.team.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
         this.team.setPrefix("");
         this.team.setSuffix("");
+        this.team.addEntry(player.getName());
+
         this.ready = true;
     }
 
